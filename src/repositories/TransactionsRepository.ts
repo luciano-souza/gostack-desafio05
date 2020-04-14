@@ -31,8 +31,6 @@ class TransactionsRepository {
     };
 
     const balance = this.transactions.reduce((acc, transaction) => {
-      console.log(acc);
-
       switch (transaction.type) {
         case 'income':
           return {
