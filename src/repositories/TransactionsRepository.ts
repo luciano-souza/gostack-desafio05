@@ -59,23 +59,6 @@ class TransactionsRepository {
 
     return transaction;
   }
-
-  private getIncome(): number {
-    return this.getAccumulatedTransactionsValueByType('income');
-  }
-
-  private getOutcome(): number {
-    return this.getAccumulatedTransactionsValueByType('outcome');
-  }
-
-  private getAccumulatedTransactionsValueByType(type: string): number {
-    return this.transactions.reduce((accumulator, transaction) => {
-      if (transaction.type === type) {
-        return accumulator + transaction.value;
-      }
-      return accumulator;
-    }, 0);
-  }
 }
 
 export default TransactionsRepository;
